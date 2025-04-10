@@ -1,31 +1,28 @@
-# Reverse proxy
+# Reverse Proxy
 
+![Proxy](images/proxy.png)
 
-## ⚙️ ¿Qué hace cada componente?
+Este ejemplo se muestra cómo configurar el proxy inverso de Nginx para enrutar solicitudes a diferentes servidores.
 
-- **Nginx**: Actúa como reverse proxy.
-- **App1**: Una mini app que devuelve una página HTML con el mensaje "Hola desde App 1".
-- **App2**: Similar a App1 pero con el mensaje "Hola desde App 2".
+Usaremos contenedores Docker para demostrarlo.
 
-## 🧪 Cómo probarlo
+Consta de tres servidores Nginx.
 
-### 1. Clonar el proyecto (o crear los archivos)
+## Steps to follow
 
-Asegúrate de tener esta estructura de carpetas y archivos.
+- Ejecutar docker-compose up
 
-├── docker-compose.yml 
-├── nginx/ 
-│ └── default.conf 
-├── app1/ 
-│ └── index.html 
-├── app2/ 
-│ └── index.html
-
-### 2. Ejecutar los contenedores
-
-En la raíz del proyecto:
-
-```bash
+```
 docker-compose up
 ```
+
+- Accede a localhost:8080/
+
+- Esto abre la aplicación principal.
+
+- Accede a localhost:8080/app/
+
+- Recarga la aplicación y se redirige a app1 y app2.
+
+
 
